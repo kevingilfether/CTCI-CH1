@@ -24,6 +24,11 @@ namespace CTCI_CH1
 
 
             //URLify
+            Console.WriteLine("Give me a string (with some spaces, if you care):");
+            string input = Console.ReadLine();
+
+            Console.WriteLine(URLify(input));
+
         }
 
         public static bool IsUniqueChecker(string input)
@@ -79,7 +84,7 @@ namespace CTCI_CH1
 
             foreach (char character in input)
             {
-                if (character == " ")
+                if (character == ' ')
                 {
                     returnMe += "%20";
                 }
