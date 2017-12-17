@@ -15,12 +15,15 @@ namespace CTCI_CH1
 
             //IsPermutation
 
-            Console.WriteLine("Give me a string");
-            string input1 = Console.ReadLine();
-            Console.WriteLine("And another");
-            string input2 = Console.ReadLine();
+            //Console.WriteLine("Give me a string");
+            //string input1 = Console.ReadLine();
+            //Console.WriteLine("And another");
+            //string input2 = Console.ReadLine();
 
-            Console.WriteLine(IsPermutation(input1, input2));
+            //Console.WriteLine(IsPermutation(input1, input2));
+
+
+            //URLify
         }
 
         public static bool IsUniqueChecker(string input)
@@ -68,6 +71,11 @@ namespace CTCI_CH1
                 return true;
             else
                 return false;
+        }
+
+        public static string URLify(string input)
+        {
+            string returnMe = "";
         }
     }
 }
