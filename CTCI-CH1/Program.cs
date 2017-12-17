@@ -55,12 +55,12 @@ namespace CTCI_CH1
             string sorted1 = "";
             string sorted2 = "";
 
-            for (int i = 0; i<sort1.Length; i++)
+            for (int i = 0; i < sort1.Length; i++)
             {
                 sorted1 += sort1[i];
             }
 
-            for (int i = 0; i<sort2.Length; i++)
+            for (int i = 0; i < sort2.Length; i++)
             {
                 sorted2 += sort2[i];
             }
@@ -76,6 +76,17 @@ namespace CTCI_CH1
         public static string URLify(string input)
         {
             string returnMe = "";
+
+            foreach (char character in input)
+            {
+                if (character == " ")
+                {
+                    returnMe += "%20";
+                }
+                else
+                    returnMe += character;
+            }
+            return returnMe;
         }
     }
 }
