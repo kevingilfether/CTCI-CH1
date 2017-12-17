@@ -6,10 +6,11 @@ namespace CTCI_CH1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Give me some input:");
-            string input = Console.ReadLine();
+            //IsUniqueChecker() Text
+            //Console.WriteLine("Give me some input:");
+            //string input = Console.ReadLine();
 
-            Console.WriteLine(IsUniqueChecker(input));
+            //Console.WriteLine(IsUniqueChecker(input));
         }
 
         public static bool IsUniqueChecker(string input)
@@ -28,6 +29,22 @@ namespace CTCI_CH1
                 }
             }
             return true;
+        }
+
+        public static bool IsPermutation(string input1, string input2)
+        {
+            char[] sort1 = input1.ToCharArray();
+            char[] sort2 = input2.ToCharArray();
+
+            Array.Sort(sort1);
+            Array.Sort(sort2);
+
+            if (input1 == input2)
+                return true;
+            else if (sort1 == sort2)
+                return true;
+            else
+                return false;
         }
     }
 }
