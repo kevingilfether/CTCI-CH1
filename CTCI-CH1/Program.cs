@@ -6,7 +6,25 @@ namespace CTCI_CH1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+        }
+
+        public static bool IsUniqueChecker(string input)
+        {
+            for (int i = 0; i < input.Length; i++)
+            {
+                for (int j = 0; j < input.Length; j++)
+                {
+                    if (i != j)
+                    {
+                        if (input[i] == input[j])
+                            return false;
+                    }
+                    else
+                        continue;
+                }
+            }
+            return true;
         }
     }
 }
