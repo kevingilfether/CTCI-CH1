@@ -6,7 +6,10 @@ namespace CTCI_CH1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Give me some input:");
+            string input = Console.ReadLine();
 
+            Console.WriteLine(IsUniqueChecker(input));
         }
 
         public static bool IsUniqueChecker(string input)
