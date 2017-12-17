@@ -11,6 +11,16 @@ namespace CTCI_CH1
             //string input = Console.ReadLine();
 
             //Console.WriteLine(IsUniqueChecker(input));
+
+
+            //IsPermutation
+
+            Console.WriteLine("Give me a string");
+            string input1 = Console.ReadLine();
+            Console.WriteLine("And another");
+            string input2 = Console.ReadLine();
+
+            Console.WriteLine(IsPermutation(input1, input2));
         }
 
         public static bool IsUniqueChecker(string input)
@@ -39,9 +49,22 @@ namespace CTCI_CH1
             Array.Sort(sort1);
             Array.Sort(sort2);
 
+            string sorted1 = "";
+            string sorted2 = "";
+
+            for (int i = 0; i<sort1.Length; i++)
+            {
+                sorted1 += sort1[i];
+            }
+
+            for (int i = 0; i<sort2.Length; i++)
+            {
+                sorted2 += sort2[i];
+            }
+
             if (input1 == input2)
                 return true;
-            else if (sort1 == sort2)
+            else if (sorted1 == sorted2)
                 return true;
             else
                 return false;
