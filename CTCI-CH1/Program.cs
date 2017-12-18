@@ -30,12 +30,20 @@ namespace CTCI_CH1
 
             //Console.WriteLine(URLify(input));
 
-            //IsPalindromePermutation
+            ////IsPalindromePermutation
 
-            Console.WriteLine("Give me a string. Can be a palindrome or a permutation of one!");
+            //Console.WriteLine("Give me a string. Can be a palindrome or a permutation of one!");
+            //string input = Console.ReadLine();
+
+            //Console.WriteLine(IsPalindromePermutation(input));
+
+
+            //IsPalindrome
+
+            Console.WriteLine("Give me a string. Can be a palindrome for added boolean fun.");
             string input = Console.ReadLine();
 
-            Console.WriteLine(IsPalindromePermutation(input));
+            Console.WriteLine(IsPalindrome(input));
 
         }
 
@@ -101,7 +109,7 @@ namespace CTCI_CH1
             }
             return returnMe;
         }
-        
+
         public static bool IsPalindromePermutation(string input)
         {
             input = input.Replace(" ", "").ToLower();
@@ -127,6 +135,24 @@ namespace CTCI_CH1
                     else
                         foundOdd = true;
                 }
+            }
+            return true;
+        }
+
+        public static bool IsPalindrome(string input)
+        {
+            input = input.ToLower().Replace(" ", "");
+            bool isOdd = false;
+
+            if (input.Length % 2 == 1)
+                isOdd = true;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] == input[input.Length - i])
+                    continue;
+                else
+                    return false;
             }
             return true;
         }
