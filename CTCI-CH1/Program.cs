@@ -25,10 +25,17 @@ namespace CTCI_CH1
 
 
             //URLify
-            Console.WriteLine("Give me a string (with some spaces, if you care):");
+            //Console.WriteLine("Give me a string (with some spaces, if you care):");
+            //string input = Console.ReadLine();
+
+            //Console.WriteLine(URLify(input));
+
+            //IsPalindromePermutation
+
+            Console.WriteLine("Give me a string. Can be a palindrome or a permutation of one!");
             string input = Console.ReadLine();
 
-            Console.WriteLine(URLify(input));
+            Console.WriteLine(IsPalindromePermutation(input));
 
         }
 
@@ -97,7 +104,7 @@ namespace CTCI_CH1
         
         public static bool IsPalindromePermutation(string input)
         {
-            input = input.Replace(" ", "");
+            input = input.Replace(" ", "").ToLower();
             Dictionary<char, int> palindromeChecker = new Dictionary<char, int>();
 
             foreach (char character in input)
