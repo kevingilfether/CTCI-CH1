@@ -147,6 +147,17 @@ namespace CTCI_CH1
             if (input.Length % 2 == 1)
                 isOdd = true;
 
+            if (isOdd)
+            {
+                for (int i = 0; i < ((input.Length-1) / 2); i++)
+                {
+                    if (input[i] == input[input.Length - i - 1])
+                        continue;
+                    else
+                        return false;
+                }
+            }
+
             for (int i = 0; i < (input.Length / 2); i++)
             {
                 if (input[i] == input[input.Length - i - 1])
