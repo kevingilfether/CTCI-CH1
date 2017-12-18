@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CTCI_CH1
 {
@@ -93,5 +94,35 @@ namespace CTCI_CH1
             }
             return returnMe;
         }
+        
+        public static bool IsPalindromePermutation(string input)
+        {
+            input = input.Replace(" ", "");
+            Dictionary<char, int> palindromeChecker = new Dictionary<char, int>();
+
+            foreach (char character in input)
+            {
+                if (palindromeChecker.ContainsKey(character))
+                    palindromeChecker[character]++;
+                else
+                    palindromeChecker.Add(character, 1);
+            }
+
+            foreach (var pair in palindromeChecker)
+            {
+                bool foundOdd = false;
+                if (pair.Value % 2 == 0)
+                    continue;
+                else if (pair.Value % 2 == 1)
+                {
+                    if (foundOdd)
+                        return false;
+                    else
+                        foundOdd = true;
+                }
+            }
+            return true;
+        }
+
     }
 }
