@@ -126,81 +126,56 @@ namespace CTCI_CH1
             }
             return true;
         }
+
+        public static bool OneAwayChecker(string input1, string input2)
+        {
+            if (input1.Length == input2.Length)
+                return OneEditReplace(input1, input2);
+            else if (input1.Length + 1 == input2.Length)
+                return OneEditInsert(input1, input2);
+            else if (input1.Length - 1 == input2.Length)
+                return OneEditInsert(input2, input1);
+            return false;
+
+
+
+
+
     }
-    public static bool OneAwayChecker(string input1, string input2)
-    {
-        //true if zero edits away
-        if (input1 == input2)
+        public static bool OneEditReplace(string s1, string s2)
+        {
+            bool foundDifference = false;
+            for (int i = 0; i < s1.Length; i++)
+            {
+                if (s1[i] != s2[i])
+                {
+                    if (foundDifference)
+                        return false;
+                    else
+                        foundDifference = true;
+                }
+            }
+            return true;
+        }
+        public static bool OneEditInsert(string s1, string s2)
+        {
+            int index1 = 0;
+            int index2 = 0;
+            while (index1 < s1.Length && index2 < s2.Length)
+                if (s1[index1] != s2[index2])
+                {
+                    if (index1 != index2)
+                        return false;
+                    index2++;
+                }
+                else
+                {
+                    index1++;
+                    index2++;
+                }
             return true;
 
-        //So, this has to return true if input1 is an insertion, deletion, or 
-        //substitution away from input2. I was thinking about taking substrings, 
-        // but I'm worried about comparing several different substrings (less or plus)
-        //one character. I think nested conditionals in a for-loop scanning is a good idea.
-
-        //Other idea is breaking, sorting, and then comparing. Probably too resource intensive.
-        //Another watch-word - Dictionaries.
-        else
-        {
-            //Subs checker
-            if (input1.Length == input2.Length)
-            {
-                bool diffChar = false;
-                for (int i = 0; i < input1.Length; i++)
-                    switch (diffChar)
-                    {
-                        case false:
-                            if (input1[i] == input2[i])
-                                continue;
-                            else
-                                diffChar = true;
-                            break;
-                        case true:
-                            return false;
-                    }
-            }
-
-            //one away in length
-            else if (input1.Length == input2.Length + 1 || input1.Length == input2.Length - 1)
-            {
-                bool displace = false;
-
-                for (int i = 0; i < input1.Length; i++)
-                    for (int j = 0; j < input2.Length; j++)
-                        if (displace == false)
-                        {
-                            if (i == j)
-                            {
-                                if (input1[i] == input2[j])
-                                    continue;
-
-                                else
-                                    displace = true;
-                            }
-                        }
-                        else if (input1.Length == input2.Length + 1)
-                        {
-                            if (input1[i] == input2[j - 1])
-                                continue;
-                            else
-                                return false;
-                        }
-
-                        else if (input1.Length == input2.Length - 1)
-                        {
-                            if (i - 1 == j)
-                            {
-                                if (input1[i] == input2[j + 1])
-                                    continue;
-                                else
-                                    return false;
-                            }
-                        }
-                        else
-                            return true;
-                return true;
-            }
-            return false;
         }
     }
 }
+
