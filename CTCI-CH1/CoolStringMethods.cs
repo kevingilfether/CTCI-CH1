@@ -161,7 +161,7 @@ namespace CTCI_CH1
             }
 
             //one away in length
-            else if (input1.Length == input2.Length + 1)
+            else if (input1.Length == input2.Length + 1 || input1.Length == input2.Length - 1)
             {
                 bool displace = false;
 
@@ -177,36 +177,27 @@ namespace CTCI_CH1
                             else
                                 displace = true;
                         }
-                        else if (input1.Length > input2.Length)
+                        else if (input1.Length == input2.Length + 1)
                         {
-                            if (i + 1 == j)
-                            {
-                                if (input1[i] == input2[j])
-                                    continue;
-                                else
-                                    return false;
-                            }
+                            if (input1[i] == input2[j-1])
+                                continue;
+                            else
+                                return false;
                         }
 
-                        else if (input1.Length < input2.Length)
+                        else if (input1.Length == input2.Length - 1)
                         {
-                            if (i -1 ==j )
+                            if (i - 1 == j)
                             {
-                                if (input1[i] == input2[j])
+                                if (input1[i] == input2[j+1])
                                     continue;
                                 else
                                     return false;
                             }
 
                         }
-
-
-
-            }
-
-            else if (input1.Length == input2.Length - 1)
-            {
-
+                        else
+                            return true;
             }
 
             else
