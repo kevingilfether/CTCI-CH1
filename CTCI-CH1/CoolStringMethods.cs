@@ -179,11 +179,24 @@ namespace CTCI_CH1
                         }
                         else if (input1.Length > input2.Length)
                         {
-
+                            if (i + 1 == j)
+                            {
+                                if (input1[i] == input2[j])
+                                    continue;
+                                else
+                                    return false;
+                            }
                         }
 
                         else if (input1.Length < input2.Length)
                         {
+                            if (i -1 ==j )
+                            {
+                                if (input1[i] == input2[j])
+                                    continue;
+                                else
+                                    return false;
+                            }
 
                         }
 
