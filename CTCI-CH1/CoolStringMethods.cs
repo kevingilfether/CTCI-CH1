@@ -136,11 +136,6 @@ namespace CTCI_CH1
             else if (input1.Length - 1 == input2.Length)
                 return OneEditInsert(input2, input1);
             return false;
-
-
-
-
-
     }
         public static bool OneEditReplace(string s1, string s2)
         {

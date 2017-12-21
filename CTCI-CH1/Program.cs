@@ -38,12 +38,21 @@ namespace CTCI_CH1
             //Console.WriteLine(IsPalindromePermutation(input));
 
 
-            //IsPalindrome
+            ////IsPalindrome
 
-            Console.WriteLine("Give me a string. Can be a palindrome for added boolean fun.");
-            string input = Console.ReadLine();
+            //Console.WriteLine("Give me a string. Can be a palindrome for added boolean fun.");
+            //string input = Console.ReadLine();
 
-            Console.WriteLine(CoolStringMethods.IsPalindrome(input));
+            //Console.WriteLine(CoolStringMethods.IsPalindrome(input));
+
+            //OneAwayChecker
+
+            Console.WriteLine("Gimme a string");
+            string input1 = Console.ReadLine();
+            Console.WriteLine("And another!");
+            string input2 = Console.ReadLine();
+
+            Console.WriteLine(CoolStringMethods.OneAwayChecker(input1, input2));
 
         }
 
