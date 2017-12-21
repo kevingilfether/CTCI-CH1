@@ -142,7 +142,24 @@ namespace CTCI_CH1
         //Another watch-word - Dictionaries.
         else
         {
+            if (input1.Length == input2.Length)
+            {
+                bool diffChar = false;
+                for (int i = 0; i < input1.Length; i++)
+                    switch (diffChar)
+                    {
+                        case false:
+                            if (input1[i] == input2[i])
+                                continue;
+                            else
+                                diffChar = true;
+                            break;
+                        case true:
+                            return false;
 
+                    }
+            }
+
+            }
         }
     }
-}
