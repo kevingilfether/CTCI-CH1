@@ -173,13 +173,14 @@ namespace CTCI_CH1
                             {
                                 if (input1[i] == input2[j])
                                     continue;
+
+                                else
+                                    displace = true;
                             }
-                            else
-                                displace = true;
                         }
                         else if (input1.Length == input2.Length + 1)
                         {
-                            if (input1[i] == input2[j-1])
+                            if (input1[i] == input2[j - 1])
                                 continue;
                             else
                                 return false;
@@ -189,21 +190,17 @@ namespace CTCI_CH1
                         {
                             if (i - 1 == j)
                             {
-                                if (input1[i] == input2[j+1])
+                                if (input1[i] == input2[j + 1])
                                     continue;
                                 else
                                     return false;
                             }
-
                         }
                         else
                             return true;
+                return true;
             }
-
-            else
-                return false;
-
-
+            return false;
         }
     }
 }
