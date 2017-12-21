@@ -163,10 +163,35 @@ namespace CTCI_CH1
             //one away in length
             else if (input1.Length == input2.Length + 1)
             {
-                
+                bool displace = false;
+
+                for (int i = 0; i < input1.Length; i++)
+                    for (int j = 0; j < input2.Length; j++)
+                        if (displace == false)
+                        {
+                            if (i == j)
+                            {
+                                if (input1[i] == input2[j])
+                                    continue;
+                            }
+                            else
+                                displace = true;
+                        }
+                        else if (input1.Length > input2.Length)
+                        {
+
+                        }
+
+                        else if (input1.Length < input2.Length)
+                        {
+
+                        }
+
+
+
             }
 
-            else if (input1.Length == input2.Length -1)
+            else if (input1.Length == input2.Length - 1)
             {
 
             }
