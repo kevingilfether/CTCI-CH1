@@ -142,6 +142,7 @@ namespace CTCI_CH1
         //Another watch-word - Dictionaries.
         else
         {
+            //Subs checker
             if (input1.Length == input2.Length)
             {
                 bool diffChar = false;
@@ -156,10 +157,24 @@ namespace CTCI_CH1
                             break;
                         case true:
                             return false;
-
                     }
             }
 
+            //one away in length
+            else if (input1.Length == input2.Length + 1)
+            {
+                
             }
+
+            else if (input1.Length == input2.Length -1)
+            {
+
+            }
+
+            else
+                return false;
+
+
         }
     }
+}
