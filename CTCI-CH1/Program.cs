@@ -30,7 +30,7 @@ namespace CTCI_CH1
 
             //Console.WriteLine(URLify(input));
 
-            ////IsPalindromePermutation
+            //IsPalindromePermutation
 
             //Console.WriteLine("Give me a string. Can be a palindrome or a permutation of one!");
             //string input = Console.ReadLine();
@@ -38,12 +38,14 @@ namespace CTCI_CH1
             //Console.WriteLine(IsPalindromePermutation(input));
 
 
-            ////IsPalindrome
+            //IsPalindrome
 
             //Console.WriteLine("Give me a string. Can be a palindrome for added boolean fun.");
             //string input = Console.ReadLine();
 
             //Console.WriteLine(CoolStringMethods.IsPalindrome(input));
+
+
 
             //OneAwayChecker
 
