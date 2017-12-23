@@ -136,8 +136,8 @@ namespace CTCI_CH1
             else if (input1.Length - 1 == input2.Length)
                 return OneEditInsert(input2, input1);
             return false;
-    }
-        public static bool OneEditReplace(string s1, string s2)
+        }
+        private static bool OneEditReplace(string s1, string s2)
         {
             bool foundDifference = false;
             for (int i = 0; i < s1.Length; i++)
@@ -152,7 +152,7 @@ namespace CTCI_CH1
             }
             return true;
         }
-        public static bool OneEditInsert(string s1, string s2)
+        private static bool OneEditInsert(string s1, string s2)
         {
             int index1 = 0;
             int index2 = 0;
@@ -169,6 +169,18 @@ namespace CTCI_CH1
                     index2++;
                 }
             return true;
+        }
+
+        public static string StringCompressor(string origString)
+        {
+            string compressedString = "";
+            int charCount = 0;
+
+            for (int i=0; i<origString.Length; i++)
+            {
+                if (i == 0)
+
+            }
 
         }
     }
