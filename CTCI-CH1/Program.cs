@@ -49,12 +49,19 @@ namespace CTCI_CH1
 
             //OneAwayChecker
 
-            Console.WriteLine("Gimme a string");
-            string input1 = Console.ReadLine();
-            Console.WriteLine("And another!");
-            string input2 = Console.ReadLine();
+            //Console.WriteLine("Gimme a string");
+            //string input1 = Console.ReadLine();
+            //Console.WriteLine("And another!");
+            //string input2 = Console.ReadLine();
 
-            Console.WriteLine(CoolStringMethods.OneAwayChecker(input1, input2));
+            //Console.WriteLine(CoolStringMethods.OneAwayChecker(input1, input2));
+
+            //StringCompressor
+
+            Console.WriteLine("Enter a String");
+            string origString = Console.ReadLine();
+
+            Console.WriteLine(CoolStringMethods.StringCompressor(origString));
 
         }
 
