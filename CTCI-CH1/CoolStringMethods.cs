@@ -179,12 +179,21 @@ namespace CTCI_CH1
             for (int i=0; i<origString.Length; i++)
             {
                 if (i == 0)
+                {
                     charCount++;
+                    continue;
+                }
                 else if (origString[i] == origString[i - 1])
+                {
                     charCount++;
+                    continue;
+                }
                 else
+                {
                     compressedString = compressedString + origString[i - 1] + charCount;
-                    charCount = 0;
+                    charCount = 1;
+                    continue;
+                }
             }
             if (compressedString.Length >= origString.Length)
                 return origString;
