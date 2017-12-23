@@ -178,21 +178,13 @@ namespace CTCI_CH1
 
             for (int i=0; i<origString.Length; i++)
             {
-                if (i == 0)
+                charCount++;
+
+                if (i+1 >= origString.Length || origString[i] != origString[i+1])
                 {
-                    charCount++;
-                    continue;
-                }
-                else if (origString[i] == origString[i - 1])
-                {
-                    charCount++;
-                    continue;
-                }
-                else
-                {
-                    compressedString = compressedString + origString[i - 1] + charCount;
-                    charCount = 1;
-                    continue;
+                    compressedString += origString[i];
+                    compressedString += charCount;
+                    charCount = 0;
                 }
             }
             if (compressedString.Length >= origString.Length)
